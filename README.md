@@ -89,6 +89,31 @@ A set of XML widget to create native Progress Bars in NativeScript apps.
 </page>
 ```
 
+## Angular 2 Example
+
+```TypeScript
+// main.ts
+import {nativeScriptBootstrap} from "nativescript-angular/application";
+import {AppComponent} from "./app.component";
+import {registerElement} from "nativescript-angular/element-registry";
+registerElement("CircleProgressBar", () => require("nativescript-progressbar/circleProgressBar").CircleProgressBar);
+registerElement("CircleSegmentBar", () => require("nativescript-progressbar/circleSegmentBar").CircleSegmentBar);
+registerElement("ArcProgressBar", () => require("nativescript-progressbar/arcProgressBar").ArcProgressBar);
+registerElement("LineProgressBar", () => require("nativescript-progressbar/lineProgressBar").LineProgressBar);
+nativeScriptBootstrap(AppComponent);
+```
+
+```HTML
+<!-- app.component.html -->
+<StackLayout>
+    <CircleProgressBar progress="{{progress}}" text="{{message}}" textSize="50"
+        widthProgressBackground="20" widthProgressBarLine="50"
+        backgroundColor="red" progressColor="blue"
+        width="200">
+    </CircleProgressBar>
+</StackLayout>
+```
+
 
 ## Attributes
 
